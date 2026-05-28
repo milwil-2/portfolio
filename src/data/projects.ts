@@ -15,7 +15,7 @@ export const projects: Project[] = [
     tags: ["python", "flask", "sqlite"],
     github: "https://github.com/milwil-2/climb-elo",
     live: "https://climb-elo.vercel.app/",
-    year: 2024,
+    year: 2026,
     wip: true,
   },
   {
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     tags: ["python", "fastapi", "qdrant", "gemini"],
     github: "https://github.com/milwil-2/curio-rag",
     live: "https://mdubs28-curio.hf.space/",
-    year: 2025,
+    year: 2026,
     wip: true,
   },
   {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     tags: ["python", "fastapi", "neo4j", "next.js"],
     github: "https://github.com/milwil-2/knowledge-graph",
     live: "https://knowledge-graph-2ho71vzq6-milwil-2s-projects.vercel.app",
-    year: 2025,
+    year: 2026,
     wip: true,
   },
 ];
