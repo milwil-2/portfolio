@@ -1,0 +1,62 @@
+---
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="milan willett — software projects" />
+    <title>milan willett</title>
+  </head>
+  <body>
+    <div class="container">
+      <Header />
+
+      <main id="projects">
+        <p class="section-label">projects</p>
+        <hr class="sep" />
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </main>
+
+      <footer>
+        <a href="mailto:milanwillett@gmail.com">milanwillett@gmail.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .section-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8em;
+    color: var(--muted);
+  }
+
+  footer a {
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="card">
+  <div class="card-header">
+    <span class="name">[ {project.name} ]</span>
+    <div class="meta">
+      <span class="year">{project.year}</span>
+      {project.live && (
+        <a href={project.live} target="_blank" rel="noopener noreferrer" class="badge">live ↗</a>
+      )}
+      <a href={project.github} target="_blank" rel="noopener noreferrer" class="badge">github ↗</a>
+    </div>
+  </div>
+  <p class="desc">{project.description}</p>
+  <p class="tags">{project.tags.join(' · ')}</p>
+</article>
+
+<style>
+  .card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card:last-child {
+    border-bottom: none;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+  }
+
+  .name {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .year {
+    color: var(--muted);
+    font-size: 0.85em;
+  }
+
+  .badge {
+    color: var(--muted);
+    font-size: 0.85em;
+    transition: color 0.15s;
+  }
+
+  .badge:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .desc {
+    color: var(--text);
+    font-size: 0.9em;
+    margin-bottom: 0.35rem;
+  }
+
+  .tags {
+    color: var(--muted);
+    font-size: 0.8em;
+  }
+</style>

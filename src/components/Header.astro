@@ -1,0 +1,47 @@
+---
+const GITHUB = "https://github.com/milwil-2";
+---
+
+<header>
+  <h1>milan willett</h1>
+  <nav>
+    <a href="#projects">projects</a>
+    <span class="sep">·</span>
+    <a href={GITHUB} target="_blank" rel="noopener noreferrer">github ↗</a>
+  </nav>
+</header>
+
+<style>
+  header {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85em;
+  }
+
+  nav a {
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .sep {
+    color: var(--border);
+  }
+</style>

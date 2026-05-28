@@ -1,0 +1,50 @@
+:root {
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --border: #222;
+  --text: #e2e2e2;
+  --muted: #555;
+  --accent: #7fff7f;
+  --font: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  --max-width: 680px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sep {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
