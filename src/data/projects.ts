@@ -57,7 +57,7 @@ export const projects: Project[] = [
   {
     name: "chess-nn",
     description: "AlphaZero-style chess engine built from scratch — a self-trained residual CNN policy/value network driven by Monte-Carlo Tree Search",
-    tags: ["python", "pytorch", "mcts"],
+    tags: ["python", "pytorch", "mcts", "cnn"],
     github: "https://github.com/milwil-2/chess-nn",
     live: "https://chess-nn.vercel.app/",
     year: 2025,
