@@ -28,8 +28,15 @@ const { project } = Astro.props;
 
 <style>
   .card {
-    padding: 1.25rem 0;
+    padding: 1.25rem 1rem;
+    margin: 0 -1rem;
     border-bottom: 1px solid var(--border);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .card:hover {
+    background: var(--surface);
   }
 
   .card:last-child {
