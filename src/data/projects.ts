@@ -5,6 +5,7 @@ export interface Project {
   github: string;
   live?: string;
   year: number;
+  wip?: boolean;
 }
 
 export const projects: Project[] = [
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     github: "https://github.com/milwil-2/climb-elo",
     live: "https://climb-elo.vercel.app/",
     year: 2024,
+    wip: true,
   },
   {
     name: "curio",
@@ -23,5 +25,15 @@ export const projects: Project[] = [
     github: "https://github.com/milwil-2/curio-rag",
     live: "https://mdubs28-curio.hf.space/",
     year: 2025,
+    wip: true,
+  },
+  {
+    name: "knowledge-graph",
+    description: "personal knowledge graph that ingests Obsidian notes into Neo4j and lets you query connections via a GraphRAG-powered chat interface",
+    tags: ["python", "fastapi", "neo4j", "next.js"],
+    github: "https://github.com/milwil-2/knowledge-graph",
+    live: "https://knowledge-graph-2ho71vzq6-milwil-2s-projects.vercel.app",
+    year: 2025,
+    wip: true,
   },
 ];

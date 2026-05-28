@@ -20,7 +20,10 @@ const { project } = Astro.props;
     </div>
   </div>
   <p class="desc">{project.description}</p>
-  <p class="tags">{project.tags.join(' · ')}</p>
+  <p class="tags">
+    {project.tags.join(' · ')}
+    {project.wip && <span class="wip">~ in development</span>}
+  </p>
 </article>
 
 <style>
@@ -79,6 +82,12 @@ const { project } = Astro.props;
 
   .tags {
     color: var(--muted);
+    font-size: 0.8em;
+  }
+
+  .wip {
+    margin-left: 0.75rem;
+    color: #b8860b;
     font-size: 0.8em;
   }
 </style>
