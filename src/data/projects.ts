@@ -16,4 +16,12 @@ export const projects: Project[] = [
     live: "https://climb-elo.vercel.app/",
     year: 2024,
   },
+  {
+    name: "curio",
+    description: "RAG demo comparing dense, hybrid, and reranked retrieval pipelines side-by-side — recall@k eval harness shows ~5× top-1 improvement with reranking",
+    tags: ["python", "fastapi", "qdrant", "gemini"],
+    github: "https://github.com/milwil-2/curio-rag",
+    live: "https://mdubs28-curio.hf.space/",
+    year: 2025,
+  },
 ];
