@@ -60,7 +60,7 @@ export const projects: Project[] = [
     tags: ["python", "pytorch", "mcts"],
     github: "https://github.com/milwil-2/chess-nn",
     live: "https://chess-nn.vercel.app/",
-    year: 2026,
+    year: 2025,
     wip: true,
     summary: {
       current: [
