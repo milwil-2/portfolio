@@ -8,7 +8,7 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<article class="card">
+<article class="card" data-card={project.summary ? '' : undefined}>
   <div class="card-header">
     <span class="name">[ {project.name} ]</span>
     <div class="meta">
@@ -24,6 +24,21 @@ const { project } = Astro.props;
     {project.tags.join(' · ')}
     {project.wip && <span class="wip">~ in development</span>}
   </p>
+  {project.summary && (
+    <div class="summary">
+      <div class="summary-inner">
+        <p class="summary-label">current</p>
+        <ul class="dash-list">
+          {project.summary.current.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="summary-label">roadmap</p>
+        <ul class="dash-list">
+          {project.summary.future.map((item) => <li>{item}</li>)}
+        </ul>
+        <button class="collapse-btn" data-collapse>[ collapse ]</button>
+      </div>
+    </div>
+  )}
 </article>
 
 <style>
@@ -97,4 +112,83 @@ const { project } = Astro.props;
     color: #b8860b;
     font-size: 0.8em;
   }
+
+  .card[data-card] {
+    cursor: pointer;
+  }
+
+  .summary {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .card.open .summary {
+    max-height: 600px;
+  }
+
+  .summary-inner {
+    padding-top: 1rem;
+  }
+
+  .summary-label {
+    color: var(--accent);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+  }
+
+  .dash-list {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  .dash-list li {
+    color: #999;
+    font-size: 0.85em;
+    line-height: 1.7;
+    padding-left: 1.1rem;
+    text-indent: -1.1rem;
+  }
+
+  .dash-list li::before {
+    content: "- ";
+    color: var(--muted);
+  }
+
+  .collapse-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--muted);
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .collapse-btn:hover {
+    color: var(--accent);
+  }
 </style>
+
+<script>
+  const cards = document.querySelectorAll<HTMLElement>('[data-card]');
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('a') || target.closest('[data-collapse]')) return;
+
+      const isOpen = card.classList.contains('open');
+      cards.forEach((c) => c.classList.remove('open'));
+      if (!isOpen) card.classList.add('open');
+    });
+
+    card.querySelector('[data-collapse]')?.addEventListener('click', () => {
+      card.classList.remove('open');
+    });
+  });
+</script>

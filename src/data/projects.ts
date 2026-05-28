@@ -6,6 +6,10 @@ export interface Project {
   live?: string;
   year: number;
   wip?: boolean;
+  summary?: {
+    current: string[];
+    future: string[];
+  };
 }
 
 export const projects: Project[] = [
@@ -17,6 +21,17 @@ export const projects: Project[] = [
     live: "https://climb-elo.vercel.app/",
     year: 2026,
     wip: true,
+    summary: {
+      current: [
+        "scrapes IFSC competition results and computes elo ratings via a backfill pipeline",
+        "leaderboard dashboard with sortable rankings and per-athlete rating histories",
+        "backtest harness that replays past seasons to validate rating accuracy",
+      ],
+      future: [
+        "head-to-head matchup win-probability predictor",
+        "live rating updates during ongoing competitions",
+      ],
+    },
   },
   {
     name: "curio",
@@ -26,6 +41,18 @@ export const projects: Project[] = [
     live: "https://mdubs28-curio.hf.space/",
     year: 2026,
     wip: true,
+    summary: {
+      current: [
+        "ingests wikipedia articles, then chunks and embeds them into a qdrant cloud vector db",
+        "runs one question through three pipelines: dense, hybrid (BM25 + dense via RRF), and hybrid + cross-encoder rerank",
+        "streams a cited LLM answer token-by-token for each pipeline (gemini 2.5 flash)",
+        "recall@k eval harness over hand-written fixtures showing ~5× top-1 recall gain from reranking",
+      ],
+      future: [
+        "agentic retrieval that plans multi-step lookups",
+        "adaptive-tutor mode that adjusts answers to the user",
+      ],
+    },
   },
   {
     name: "knowledge-graph",
@@ -35,5 +62,16 @@ export const projects: Project[] = [
     live: "https://knowledge-graph-2ho71vzq6-milwil-2s-projects.vercel.app",
     year: 2026,
     wip: true,
+    summary: {
+      current: [
+        "parses Obsidian notes and extracts entities and relationships into a neo4j graph",
+        "GraphRAG chat interface that answers questions by traversing note connections",
+        "interactive graph visualization of how notes link together",
+      ],
+      future: [
+        "incremental sync that updates the graph as notes change",
+        "multi-hop reasoning across longer chains of connections",
+      ],
+    },
   },
 ];
