@@ -76,7 +76,7 @@ export const projects: Project[] = [
     },
   },
   {
-    name: "business-networking",
+    name: "business-network",
     description: "graph of a B2B trade & trust network — verified company profiles linked by trade relationships, with calculated trust scores and hybrid GraphRAG question answering",
     tags: ["python", "fastapi", "neo4j", "groq"],
     github: "https://github.com/milwil-2/Business-Networking",
