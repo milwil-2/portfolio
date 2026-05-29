@@ -80,7 +80,7 @@ export const projects: Project[] = [
     description: "graph of a B2B trade & trust network — verified company profiles linked by trade relationships, with calculated trust scores and hybrid GraphRAG question answering",
     tags: ["python", "fastapi", "neo4j", "groq"],
     github: "https://github.com/milwil-2/business-network",
-    live: "https://knowledge-graph-2ho71vzq6-milwil-2s-projects.vercel.app",
+    live: "https://business-network-app.vercel.app/",
     year: 2026,
     wip: true,
     summary: {
