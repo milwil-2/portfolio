@@ -76,10 +76,10 @@ export const projects: Project[] = [
     },
   },
   {
-    name: "knowledge-graph",
+    name: "business-networking",
     description: "personal knowledge graph that ingests Obsidian notes into Neo4j and lets you query connections via a GraphRAG-powered chat interface",
     tags: ["python", "fastapi", "neo4j", "next.js"],
-    github: "https://github.com/milwil-2/knowledge-graph",
+    github: "https://github.com/milwil-2/Business-Networking",
     live: "https://knowledge-graph-2ho71vzq6-milwil-2s-projects.vercel.app",
     year: 2026,
     wip: true,
